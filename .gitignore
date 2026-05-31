@@ -1,0 +1,9 @@
+# Dependencies (this project has none — three.js loads from a CDN)
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

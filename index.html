@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Naadir Duglas | 3D Portfolio Museum</title>
+  <meta name="description" content="An interactive 3D beachfront museum showcasing Naadir Duglas' portfolio — built with three.js." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e1012'/><text x='50' y='68' font-size='58' font-family='Inter,sans-serif' fill='%239aa3ad' text-anchor='middle'>N</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- three.js via import map — no build step, drops straight onto GitHub Pages -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- 3D canvas mounts here -->
+  <div id="app" aria-hidden="true"></div>
+
+  <!-- Heads-up display -->
+  <div id="area-label" class="hud"></div>
+
+  <div id="nav-hint" class="hud">
+    <span class="key">Drag</span> look around
+    <span class="dot">·</span>
+    <span class="key">▲ ▼</span> travel between galleries
+    <span class="dot">·</span>
+    <span class="key">◀ ▶</span> turn
+    <span class="dot">·</span>
+    click a display to inspect
+  </div>
+
+  <!-- Project detail panel -->
+  <aside id="info-card"></aside>
+
+  <!-- Intro / Enter splash -->
+  <div id="intro">
+    <div class="intro-inner">
+      <span id="intro-role" class="intro-role"></span>
+      <h1 id="intro-name" class="intro-name"></h1>
+      <p id="intro-tag" class="intro-tag"></p>
+      <button id="enter-btn" class="enter-btn">
+        <span>Enter the Museum</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <p class="intro-sub">A 3D beachfront reimagining of my portfolio · built with three.js</p>
+    </div>
+    <div class="intro-vignette" aria-hidden="true"></div>
+  </div>
+
+  <noscript>
+    <div class="noscript">This experience needs JavaScript and WebGL. Visit the classic portfolio at
+      <a href="https://naadir-dev-portfolio.github.io/">naadir-dev-portfolio.github.io</a>.</div>
+  </noscript>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
